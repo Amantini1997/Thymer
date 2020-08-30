@@ -1,0 +1,41 @@
+@import '../styles.scss';
+
+.container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+}
+
+main {
+    height: 100%;
+    display: grid;
+    grid-template-rows: min-content max-content;
+}
+
+.container .mat-drawer {
+    padding: 20px;
+    min-width: 200px;
+
+    & .nav-title {
+        text-align: center;
+        font-weight: bold;
+        padding-bottom: 20px;
+    }
+
+    & .nav-item {
+        @extend .thymer-theme;
+        display: block;
+        padding-bottom: 20px;
+        border: none;
+    } 
+}
+
+.sidenav-content {
+    @extend .thymer-theme;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

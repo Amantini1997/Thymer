@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="controller">
+        <div class="controller__duration">
+            <!-- <label for="duration-input">Duration:</label>  -->
+            <input 
+                id="duration-hours"
+                type="number"
+                [disabled]="timerIsActive" 
+                value="00">h &nbsp;
+            <input 
+                id="duration-minutes"
+                type="number"
+                [disabled]="timerIsActive" 
+                value="00">m &nbsp;
+            <input 
+                id="duration-seconds"
+                type="number"
+                [disabled]="timerIsActive" 
+                value="30">s
+        </div>
+        <br>
+        <button
+            [style.display]="timerIsActive ? 'none': 'block'"
+            class="controller__button" 
+            (click)="toggleTimer()">
+            START
+        </button>
+        <button 
+            [style.display]="!timerIsActive? 'none': 'block'"
+            class="controller__reset-button" 
+            (click)="resetTimer()">
+            RESET
+        </button>
+    </div>
+    <div 
+        class="clock {{timerIsRunning ? 'active': ''}}"
+        (click)="toggleTimer()">
+        {{time}}
+    </div>
+</div>

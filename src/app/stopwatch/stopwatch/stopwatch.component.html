@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="controller">
+        <button
+            class="controller__button" 
+            (click)="toggleTimer()">
+            {{timerIsActive ? "STOP" : "START"}}
+        </button>
+        <br>
+        <button 
+            [disabled]="!timerIsActive"
+            class="controller__reset-button" 
+            (click)="resetTimer()">
+            RESET
+        </button>
+    </div>
+    <div 
+        class="clock {{timerIsRunning ? 'active': ''}}"
+        (click)="toggleTimer()">
+        {{time}}
+    </div>
+</div>

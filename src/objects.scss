@@ -1,0 +1,79 @@
+@import './styles.scss';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $purple1;
+    height: 100%;
+
+    > .controller {
+        @extend .thymer-theme;
+        margin-top: 40px;
+        padding: 20px;
+        border-radius: 10px;
+        min-width: 170px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        button:disabled {
+            @extend .thymer-reverse-disabled;
+        }
+
+        > * {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            input {
+                @extend .thymer-reverse;
+                margin-left: 4px;
+                margin-right: 4px;
+                padding-left: 2px;
+                padding-right: 2px;
+                border: none;
+                border-radius: 2px;
+                width: 25px;
+                max-width: fit-content;
+                text-align: right;
+                transition: all .4s;
+
+                &:disabled {
+                    @extend .thymer-theme;
+                }
+            }
+        }
+
+        > .controller__button,
+        > .controller__reset-button {
+            @extend .thymer-reverse;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+    }
+}
+
+
+.clock {
+    @extend .thymer-reverse-disabled;
+    width: 170px;
+    height: 170px;
+    padding: 20px;
+    margin-bottom: 15vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 3.5rem;
+    transition: all .4s;
+
+    &.active {
+        @extend .thymer-reverse;
+    }
+}
